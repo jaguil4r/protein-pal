@@ -1,0 +1,103 @@
+.streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: var(--weight-semibold, 600);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.streak-badge__emoji {
+  font-size: 0.85rem;
+}
+
+.streak-badge__count {
+  font-weight: var(--weight-bold, 700);
+}
+
+.streak-badge__label {
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-medium, 500);
+}
+
+.streak-badge__tier {
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 0.6rem;
+  font-weight: var(--weight-bold, 700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Tier styling */
+.streak-badge--bronze {
+  border-color: #CD7F32;
+  background: rgba(205, 127, 50, 0.08);
+}
+
+.streak-badge--bronze .streak-badge__tier {
+  background: rgba(205, 127, 50, 0.15);
+  color: #CD7F32;
+}
+
+.streak-badge--silver {
+  border-color: #C0C0C0;
+  background: rgba(192, 192, 192, 0.08);
+}
+
+.streak-badge--silver .streak-badge__tier {
+  background: rgba(192, 192, 192, 0.2);
+  color: #808080;
+}
+
+.streak-badge--gold {
+  border-color: #FFD700;
+  background: rgba(255, 215, 0, 0.08);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.15);
+}
+
+.streak-badge--gold .streak-badge__tier {
+  background: rgba(255, 215, 0, 0.2);
+  color: #B8860B;
+}
+
+.streak-badge--queen {
+  border-color: #E879F9;
+  background: linear-gradient(135deg, rgba(232, 121, 249, 0.08), rgba(255, 215, 0, 0.08));
+  box-shadow: 0 0 12px rgba(232, 121, 249, 0.2);
+}
+
+.streak-badge--queen .streak-badge__tier {
+  background: linear-gradient(135deg, #E879F9, #FFD700);
+  color: white;
+}
+
+/* New tier pulse */
+.streak-badge--new {
+  animation: streak-pulse 0.6s ease-in-out 3;
+}
+
+@keyframes streak-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+[data-theme="dark"] .streak-badge--bronze {
+  background: rgba(205, 127, 50, 0.12);
+}
+
+[data-theme="dark"] .streak-badge--silver {
+  background: rgba(192, 192, 192, 0.12);
+}
+
+[data-theme="dark"] .streak-badge--gold {
+  background: rgba(255, 215, 0, 0.12);
+}
+
+[data-theme="dark"] .streak-badge--queen {
+  background: linear-gradient(135deg, rgba(232, 121, 249, 0.15), rgba(255, 215, 0, 0.15));
+}

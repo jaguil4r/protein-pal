@@ -1,0 +1,73 @@
+.suggestion-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Pill toggle row ── */
+.suggestion-toggle__pills {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: var(--space-2, 8px) 0;
+}
+
+.suggestion-toggle__pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  font-size: 0.7rem;
+  font-weight: var(--weight-semibold, 600);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.55;
+}
+
+.suggestion-toggle__pill--active {
+  opacity: 1;
+  border-color: var(--color-accent-pink);
+  color: var(--color-text);
+}
+
+.suggestion-toggle__pill:hover {
+  opacity: 0.85;
+}
+
+.suggestion-toggle__pill--active:hover {
+  opacity: 1;
+}
+
+/* ── Content area ── */
+.suggestion-toggle__content {
+  background: var(--color-bg-card);
+  border-radius: var(--radius, 12px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  box-shadow: 0 1px 4px var(--color-shadow);
+  animation: suggestion-fade-in 0.3s ease-out;
+}
+
+@keyframes suggestion-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Override SnackSuggestion's own card styling when nested inside toggle */
+.suggestion-toggle__content .snack-suggestion {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  animation: none;
+}

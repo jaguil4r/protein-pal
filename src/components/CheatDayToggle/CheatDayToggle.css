@@ -1,0 +1,59 @@
+.cheat-day-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg-card);
+  cursor: pointer;
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: var(--weight-semibold, 600);
+  transition: all 0.25s ease;
+}
+
+.cheat-day-toggle:hover:not(:disabled) {
+  border-color: #FFA726;
+  background: rgba(255, 167, 38, 0.08);
+}
+
+.cheat-day-toggle--active {
+  border-color: #FFA726;
+  background: rgba(255, 167, 38, 0.12);
+  box-shadow: 0 0 8px rgba(255, 167, 38, 0.2);
+}
+
+.cheat-day-toggle--active:hover {
+  border-color: #EF6C00;
+}
+
+.cheat-day-toggle--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cheat-day-toggle__emoji {
+  font-size: 0.9rem;
+}
+
+.cheat-day-toggle__label {
+  color: var(--color-text);
+}
+
+.cheat-day-toggle__remaining {
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-medium, 500);
+  font-size: 0.65rem;
+}
+
+.cheat-day-toggle--active .cheat-day-toggle__label {
+  color: #EF6C00;
+}
+
+.cheat-day-toggle--active .cheat-day-toggle__remaining {
+  color: #FFA726;
+}
+
+[data-theme="dark"] .cheat-day-toggle--active {
+  background: rgba(255, 167, 38, 0.18);
+}

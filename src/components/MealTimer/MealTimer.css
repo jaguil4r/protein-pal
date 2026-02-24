@@ -1,0 +1,38 @@
+.meal-timer {
+  text-align: center;
+  padding: var(--space-3);
+  background: var(--color-bg-card);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  transition: background-color 0.3s ease;
+}
+
+.meal-timer__text {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.meal-timer__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.meal-timer__dot--ok {
+  background: var(--color-accent-green);
+}
+
+.meal-timer__dot--overdue {
+  background: var(--color-danger);
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}

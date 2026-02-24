@@ -1,0 +1,115 @@
+.progress-ring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.progress-ring__svg {
+  width: 180px;
+  height: 180px;
+  transform: rotate(-90deg);
+}
+
+.progress-ring__track {
+  fill: none;
+  stroke: var(--color-progress-bg);
+  stroke-width: 10;
+}
+
+.progress-ring__arc {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.progress-ring__arc--low {
+  stroke: var(--color-progress-low);
+}
+
+.progress-ring__arc--mid {
+  stroke: var(--color-progress-mid);
+}
+
+.progress-ring__arc--high {
+  stroke: var(--color-progress-high);
+}
+
+.progress-ring__arc--complete {
+  stroke: var(--color-progress-complete);
+  filter: drop-shadow(0 0 6px var(--color-progress-complete));
+}
+
+/* Milestone pulse */
+.progress-ring__arc--celebrating {
+  animation: ring-pulse 0.6s ease-in-out 2;
+}
+
+@keyframes ring-pulse {
+  0%, 100% { stroke-width: 10; }
+  50% { stroke-width: 14; }
+}
+
+/* Center text overlay */
+.progress-ring__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.progress-ring__percent {
+  font-size: 1.8rem;
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+}
+
+.progress-ring__grams {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+/* Sparkle celebration */
+.progress-ring__sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-progress-complete);
+  animation: sparkle-burst 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes sparkle-burst {
+  0% {
+    transform: scale(0) translate(0, 0);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.2) translate(var(--sparkle-x), var(--sparkle-y));
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5) translate(var(--sparkle-x), var(--sparkle-y));
+    opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .progress-ring__svg {
+    width: 200px;
+    height: 200px;
+  }
+
+  .progress-ring__percent {
+    font-size: 2rem;
+  }
+}

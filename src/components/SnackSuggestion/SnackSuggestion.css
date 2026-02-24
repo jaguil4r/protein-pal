@@ -1,0 +1,163 @@
+.snack-suggestion {
+  background: var(--color-bg-card);
+  border-radius: var(--radius, 12px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  box-shadow: 0 1px 4px var(--color-shadow);
+  animation: snack-fade-in 0.3s ease-out;
+}
+
+@keyframes snack-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.snack-suggestion__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2, 8px);
+}
+
+.snack-suggestion__title {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: var(--weight-semibold, 600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+.snack-suggestion__shuffle {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.3s ease;
+}
+
+.snack-suggestion__shuffle:hover {
+  background: var(--color-bg);
+  color: var(--color-accent-pink);
+}
+
+.snack-suggestion__shuffle:active {
+  transform: rotate(180deg);
+}
+
+.snack-suggestion__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.snack-suggestion__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  padding: 6px 8px;
+  border-radius: var(--radius-sm, 8px);
+  background: var(--color-bg);
+  transition: background-color 0.15s ease;
+}
+
+.snack-suggestion__item:hover {
+  background: var(--color-border);
+}
+
+.snack-suggestion__icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+
+.snack-suggestion__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.snack-suggestion__name {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--weight-medium, 500);
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.snack-suggestion__detail {
+  font-size: 0.65rem;
+  color: var(--color-text-secondary);
+}
+
+.snack-suggestion__protein {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--weight-semibold, 600);
+  color: var(--color-accent-pink);
+  white-space: nowrap;
+}
+
+/* ── Meal-time filter pills ── */
+.snack-suggestion__filters {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--space-2, 8px);
+  flex-wrap: wrap;
+}
+
+.snack-suggestion__filter-pill {
+  padding: 4px 10px;
+  border-radius: var(--radius-pill, 20px);
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: var(--weight-medium, 500);
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.snack-suggestion__filter-pill:hover {
+  border-color: var(--color-accent-pink);
+  color: var(--color-text);
+}
+
+.snack-suggestion__filter-pill--active {
+  background: var(--color-accent-pink);
+  color: #fff;
+  border-color: var(--color-accent-pink);
+}
+
+[data-theme="dark"] .snack-suggestion__filter-pill--active {
+  color: var(--color-bg);
+}
+
+.snack-suggestion__empty {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: var(--space-4, 16px) 0;
+  font-style: italic;
+}
+
+.snack-suggestion__context {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-2, 8px);
+  text-align: center;
+  font-style: italic;
+}

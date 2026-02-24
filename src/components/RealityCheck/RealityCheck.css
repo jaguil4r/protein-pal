@@ -1,0 +1,74 @@
+.reality-check {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius, 12px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  animation: reality-check-in 0.4s ease-out;
+}
+
+@keyframes reality-check-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reality-check__content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2, 8px);
+}
+
+.reality-check__icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.reality-check__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.reality-check__message {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.reality-check__message strong {
+  color: rgb(245, 158, 11);
+  font-weight: var(--weight-semibold, 600);
+}
+
+.reality-check__suggestions {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.reality-check__dismiss {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.reality-check__dismiss:hover {
+  background: rgba(245, 158, 11, 0.2);
+}
+
+[data-theme="dark"] .reality-check {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.2);
+}

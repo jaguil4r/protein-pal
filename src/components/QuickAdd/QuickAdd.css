@@ -1,0 +1,49 @@
+.quick-add {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.quick-add__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+
+.quick-add__pills {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.quick-add__pill {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.quick-add__pill:hover {
+  border-color: var(--color-accent-pink);
+  background: var(--color-accent-pink);
+  color: #fff;
+}
+
+[data-theme="dark"] .quick-add__pill:hover {
+  color: var(--color-bg);
+}
+
+.quick-add__pill-grams {
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent-pink);
+}
+
+.quick-add__pill:hover .quick-add__pill-grams {
+  color: inherit;
+}

@@ -1,0 +1,206 @@
+.weekly-summary {
+  background: var(--color-bg-card);
+  border-radius: var(--radius, 12px);
+  padding: var(--space-4, 16px);
+  box-shadow: 0 1px 4px var(--color-shadow);
+  animation: weekly-fade-in 0.3s ease-out;
+}
+
+@keyframes weekly-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.weekly-summary__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3, 12px);
+}
+
+.weekly-summary__header--toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  margin-bottom: 0;
+}
+
+.weekly-summary__header--toggle:hover .weekly-summary__title {
+  color: var(--color-accent-pink);
+}
+
+.weekly-summary__title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: var(--weight-semibold, 600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  transition: color 0.15s ease;
+}
+
+.weekly-summary__chevron {
+  display: inline-block;
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+  transform: rotate(-90deg);
+}
+
+.weekly-summary__chevron--open {
+  transform: rotate(0deg);
+}
+
+.weekly-summary__range {
+  font-size: 0.65rem;
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-medium, 500);
+}
+
+/* Bar chart */
+.weekly-summary__chart {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: var(--space-3, 12px);
+  padding: 0 4px;
+}
+
+.weekly-summary__day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 2px;
+}
+
+.weekly-summary__bar-container {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.weekly-summary__goal-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-text-secondary);
+  opacity: 0.2;
+}
+
+.weekly-summary__bar {
+  width: 70%;
+  max-width: 24px;
+  border-radius: 3px 3px 0 0;
+  background: var(--color-border);
+  transition: height 0.5s ease;
+  min-height: 2px;
+}
+
+.weekly-summary__bar--hit {
+  background: var(--color-accent-pink);
+}
+
+.weekly-summary__bar--cheat {
+  background: #FFA726;
+  opacity: 0.7;
+}
+
+.weekly-summary__day--future .weekly-summary__bar {
+  background: transparent;
+  border: 1px dashed var(--color-border);
+  min-height: 8px;
+}
+
+.weekly-summary__day--today {
+  position: relative;
+}
+
+.weekly-summary__day--today .weekly-summary__day-label {
+  font-weight: var(--weight-bold, 700);
+  color: var(--color-accent-pink);
+}
+
+.weekly-summary__day-label {
+  font-size: 0.6rem;
+  font-weight: var(--weight-medium, 500);
+  color: var(--color-text-secondary);
+}
+
+.weekly-summary__day-icon {
+  font-size: 0.55rem;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+}
+
+.weekly-summary__bar--hit + .weekly-summary__day-label ~ .weekly-summary__day-icon {
+  color: var(--color-accent-pink);
+}
+
+/* Stats grid */
+.weekly-summary__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-3, 12px);
+  padding: var(--space-2, 8px) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.weekly-summary__stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weekly-summary__stat-label {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-medium, 500);
+}
+
+.weekly-summary__stat-value {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: var(--weight-semibold, 600);
+  color: var(--color-text);
+}
+
+/* Focus tip */
+.weekly-summary__tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: var(--space-2, 8px) var(--space-3, 12px);
+  border-radius: var(--radius-sm, 8px);
+  background: var(--color-bg);
+}
+
+.weekly-summary__tip-icon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.weekly-summary__tip-text {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  line-height: 1.4;
+}

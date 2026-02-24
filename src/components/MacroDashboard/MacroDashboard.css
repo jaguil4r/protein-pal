@@ -1,0 +1,63 @@
+.macro-dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  padding: var(--space-2, 8px) 0;
+}
+
+/* ── Toggle pill row ── */
+.macro-dashboard__toggles {
+  display: flex;
+  gap: 8px;
+}
+
+.macro-dashboard__toggle-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  font-size: 0.7rem;
+  font-weight: var(--weight-semibold, 600);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.55;
+}
+
+.macro-dashboard__toggle-pill--active {
+  opacity: 1;
+  border-color: var(--color-accent-pink);
+  color: var(--color-text);
+}
+
+.macro-dashboard__toggle-pill:hover {
+  opacity: 0.85;
+}
+
+.macro-dashboard__toggle-pill--active:hover {
+  opacity: 1;
+}
+
+/* ── Rings row ── */
+.macro-dashboard__rings {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4, 16px);
+  animation: macro-fade-in 0.4s ease-out;
+}
+
+@keyframes macro-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

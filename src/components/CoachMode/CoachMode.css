@@ -1,0 +1,143 @@
+.coach-mode {
+  animation: coach-fade-in 0.3s ease-out;
+}
+
+@keyframes coach-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.coach-mode__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--space-3, 12px);
+}
+
+.coach-mode__title {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: var(--weight-semibold, 600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+.coach-mode__summary {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--weight-medium, 500);
+  color: var(--color-text);
+}
+
+/* Meal slot cards */
+.coach-mode__slots {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.coach-mode__slot {
+  background: var(--color-bg);
+  border-radius: var(--radius-sm, 8px);
+  padding: 10px 12px;
+  transition: opacity 0.2s ease;
+}
+
+.coach-mode__slot--logged {
+  opacity: 0.55;
+}
+
+.coach-mode__slot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.coach-mode__slot-label {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--weight-semibold, 600);
+  color: var(--color-text);
+}
+
+.coach-mode__slot-target {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-medium, 500);
+}
+
+/* Individual foods within a slot */
+.coach-mode__foods {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.coach-mode__food {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.coach-mode__food-name {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text);
+}
+
+.coach-mode__food-protein {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--weight-semibold, 600);
+  color: var(--color-accent-pink);
+}
+
+/* Footer with totals and add button */
+.coach-mode__slot-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 6px;
+  border-top: 1px solid var(--color-border);
+}
+
+.coach-mode__slot-totals {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-medium, 500);
+}
+
+.coach-mode__add-btn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: var(--color-accent-pink);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: var(--weight-semibold, 600);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+[data-theme="dark"] .coach-mode__add-btn {
+  color: var(--color-bg);
+}
+
+.coach-mode__add-btn:hover {
+  opacity: 0.9;
+}
+
+.coach-mode__add-btn:active {
+  transform: scale(0.96);
+}
+
+.coach-mode__added {
+  font-size: 0.8rem;
+  font-weight: var(--weight-semibold, 600);
+  color: var(--color-accent-pink);
+}
