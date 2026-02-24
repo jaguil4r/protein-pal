@@ -307,6 +307,7 @@ function App() {
         <QuickAdd
           onQuickAdd={handleQuickAdd}
           selectedCategory={selectedCategory}
+          refreshKey={dayData.entries.length}
         />
         <AddEntry
           onAdd={handleAddEntry}

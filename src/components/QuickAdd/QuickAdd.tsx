@@ -7,9 +7,10 @@ import './QuickAdd.css';
 interface Props {
   onQuickAdd: (name: string, protein: number, category: MealCategory, macros?: { carbs: number; calories: number; fiber: number }) => void;
   selectedCategory: MealCategory;
+  refreshKey?: number;
 }
 
-export function QuickAdd({ onQuickAdd, selectedCategory }: Props) {
+export function QuickAdd({ onQuickAdd, selectedCategory, refreshKey = 0 }: Props) {
   const [favorites, setFavorites] = useState<FavoriteEntry[]>([]);
 
   const refreshFavorites = () => {
@@ -42,15 +43,7 @@ export function QuickAdd({ onQuickAdd, selectedCategory }: Props) {
 
   useEffect(() => {
     refreshFavorites();
-  }, [selectedCategory]);
-
-  // Refresh favorites when component re-renders (e.g., after new entry)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      refreshFavorites();
-    }, 500);
-    return () => clearTimeout(timer);
-  });
+  }, [selectedCategory, refreshKey]);
 
   if (favorites.length === 0) return null;
 
