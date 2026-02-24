@@ -91,7 +91,7 @@ function getSnackIdeas(
     ? Math.round(proteinRemaining / mealsLeft)
     : proteinRemaining;
 
-  const snackFriendly = new Set(['dairy', 'other', 'beverage']);
+  const snackFriendly = new Set(['dairy', 'other', 'beverage', 'nut', 'legume']);
 
   const scored = candidates.map((c) => {
     let score = 0;

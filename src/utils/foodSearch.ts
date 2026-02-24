@@ -5,7 +5,7 @@ import { foodDatabase } from '../data/foodDatabase';
  * Search foods by query string. Fuzzy prefix match, case-insensitive.
  * Returns top matches sorted by relevance (exact prefix first, then contains).
  */
-export function searchFoods(query: string, limit = 6): FoodItem[] {
+export function searchFoods(query: string, limit = 8): FoodItem[] {
   const q = query.toLowerCase().trim();
   if (q.length < 2) return [];
 
@@ -64,10 +64,10 @@ export function getDefaultSuggestionsForMeal(mealCategory: MealCategory): FoodIt
   const lookup = (id: string) => foodDatabase.find((f) => f.id === id);
 
   const suggestions: Record<MealCategory, string[]> = {
-    breakfast: ['eggs', 'bacon', 'greek-yogurt', 'oatmeal', 'banana', 'pancakes'],
-    lunch: ['chicken-breast', 'white-rice', 'broccoli', 'deli-turkey', 'ground-turkey', 'salmon'],
-    dinner: ['ribeye-steak', 'chicken-thigh', 'sweet-potato', 'asparagus', 'turkey-breast', 'salmon'],
-    snack: ['cottage-cheese', 'protein-shake', 'protein-bar', 'almonds', 'greek-yogurt', 'apple'],
+    breakfast: ['eggs', 'bacon', 'greek-yogurt', 'oatmeal', 'banana', 'pancakes', 'chilaquiles', 'latte'],
+    lunch: ['chicken-breast', 'white-rice', 'broccoli', 'deli-turkey', 'turkey-sandwich', 'burrito-bowl', 'stir-fry', 'gyro'],
+    dinner: ['ribeye-steak', 'chicken-thigh', 'sweet-potato', 'asparagus', 'salmon', 'curry-chicken', 'ramen-bowl', 'pad-thai'],
+    snack: ['cottage-cheese', 'protein-shake', 'protein-bar', 'almonds', 'greek-yogurt', 'cashews', 'edamame', 'pistachios'],
   };
 
   return (suggestions[mealCategory] || [])
@@ -91,9 +91,16 @@ export function getHighProteinSuggestions(limit = 3): FoodItem[] {
     'deli-turkey',
     'protein-bar',
     'string-cheese',
-    'beef-jerky',
+    'jerky-beef',
     'ground-turkey',
     'turkey-breast',
+    'edamame',
+    'lentils',
+    'hemp-seeds',
+    'tofu',
+    'tempeh',
+    'lobster',
+    'sardines',
   ];
 
   const foods = highProteinIds

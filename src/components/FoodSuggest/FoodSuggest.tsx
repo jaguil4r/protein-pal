@@ -26,7 +26,7 @@ export function FoodSuggest({ query, onSelect, visible, onDismiss }: Props) {
 
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => {
-      const found = searchFoods(query, 6);
+      const found = searchFoods(query, 8);
       setResults(found);
       setActiveIndex(-1);
     }, 150);

@@ -4,7 +4,7 @@ export type AnimalType = 'sloth' | 'panda' | 'bunny';
 
 export type MoodState = 'tired' | 'hungry' | 'disappointed' | 'motivated' | 'happy' | 'flexing' | 'full';
 
-export type FoodCategory = 'protein' | 'dairy' | 'grain' | 'vegetable' | 'fruit' | 'sauce' | 'beverage' | 'other';
+export type FoodCategory = 'protein' | 'dairy' | 'grain' | 'vegetable' | 'fruit' | 'sauce' | 'beverage' | 'legume' | 'nut' | 'prepared' | 'other';
 
 export type StreakTier = 'none' | 'bronze' | 'silver' | 'gold' | 'queen';
 
