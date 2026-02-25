@@ -83,8 +83,9 @@ export function AddEntry({ onAdd, selectedCategory, onCategoryChange }: Props) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const proteinNum = parseInt(protein, 10);
-    if (!name.trim() || isNaN(proteinNum) || proteinNum < 1) return;
+    if (isNaN(proteinNum) || proteinNum < 1) return;
 
+    const finalName = name.trim() || 'Quick entry';
     const carbsNum = parseInt(carbs, 10);
     const calsNum = parseInt(calories, 10);
     const fiberNum = parseInt(fiber, 10);
@@ -98,7 +99,7 @@ export function AddEntry({ onAdd, selectedCategory, onCategoryChange }: Props) {
           }
         : undefined;
 
-    onAdd(name.trim(), proteinNum, selectedCategory, macros);
+    onAdd(finalName, proteinNum, selectedCategory, macros);
 
     setName('');
     setProtein('');
@@ -224,7 +225,7 @@ export function AddEntry({ onAdd, selectedCategory, onCategoryChange }: Props) {
         type="submit"
         className="add-entry__submit"
         data-testid="add-entry-button"
-        disabled={!name.trim() || !protein}
+        disabled={!protein}
       >
         + Add Entry
       </button>
